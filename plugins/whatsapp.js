@@ -931,7 +931,7 @@ smd(
 );
 
 
-Function({
+smd({
         pattern: 'archive',
         fromMe: true,
         desc: 'archive whatsapp chat',
