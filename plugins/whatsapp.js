@@ -929,61 +929,17 @@ smd(
     }
   }
 );
-smd(
-  {
-    pattern: "archive",
-    fromMe: true,
-    desc: "archive whatsapp chat",
-    type: "whatsapp",
-  },
-  async (message, match) => {
-    try {
-      const lstMsg = {
-        message: message.message,
-        key: message.key,
-        messageTimestamp: message.messageTimestamp,
-      };
-      await message.bot.chatModify(
-        {
-          archive: true,
-          lastMessages: [lstMsg],
-        },
-        message.jid
-      );
-      await message.send("_Archived_");
-    } catch (e) {
-      message.error(`${e}\n\nCommand : archive`, e, false);
-    }
-  }
-);
 
-smd(
-  {
-    pattern: "unarchive",
-    fromMe: true,
-    desc: "unarchive whatsapp chat",
-    type: "whatsapp",
-  },
-  async (message, match) => {
-    try {
-      const lstMsg = {
-        message: message.message,
-        key: message.key,
-        messageTimestamp: message.messageTimestamp,
-      };
-      await message.bot.chatModify(
-        {
-          archive: false,
-          lastMessages: [lstMsg],
-        },
-        message.jid
-      );
-      await message.send("_Unarchived_");
-    } catch (e) {
-      message.error(`${e}\n\nCommand : unarchive`, e, false);
-    }
-  }
-);
+
+Function({
+        pattern: 'archive',
+        fromMe: true,
+        desc: 'archive whatsapp chat',
+        type: 'whatsapp'
+}, async (message, match) => {
+        await message.archiveChat(message.chat, true)
+        await message.send('_Archived_')
+})
 
 smd(
   {
