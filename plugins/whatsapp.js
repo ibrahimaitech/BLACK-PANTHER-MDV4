@@ -1,5 +1,5 @@
 const {
-        Function
+        smd
 } = require('../lib/')
 
 const isBotAdmins = async (message) => {
@@ -9,8 +9,8 @@ const isBotAdmins = async (message) => {
   return !!message.isGroup && adminIds.includes(message.user_id);
 };
 
-Function({
-        pattern: 'pp$',
+smd({
+        pattern: 'pp',
         fromMe: true,
         desc: 'set profile picture in any resolution',
         type: 'user'
@@ -21,8 +21,8 @@ Function({
         await message.send('_Successfully Profile Picture Updated_')
 })
 
-Function({
-        pattern: 'fullpp$',
+smd({
+        pattern: 'fullpp',
         fromMe: true,
         desc: 'set profile picture in any resolution',
         type: 'user'
@@ -33,8 +33,8 @@ Function({
         await message.send('_Successfully Profile Picture Updated_')
 })
 
-Function({
-        pattern: 'gpp$',
+smd({
+        pattern: 'gpp',
         fromMe: true,
         desc: 'set group icon in any resolution',
         type: 'group'
@@ -48,8 +48,8 @@ Function({
         await message.send('_Successfully Group icon Updated_')
 })
 
-Function({
-        pattern: 'block$',
+smd({
+        pattern: 'block',
         fromMe: true,
         desc: 'Block a person',
         type: 'user'
@@ -60,8 +60,8 @@ Function({
         await message.client.updateBlockStatus(id, 'block');
 })
 
-Function({
-        pattern: 'unblock$',
+smd({
+        pattern: 'unblock',
         fromMe: true,
         desc: 'Unblock a person',
         type: 'user'
@@ -72,8 +72,8 @@ Function({
         await message.client.updateBlockStatus(id, 'unblock');
 })
 
-Function({
-        pattern: 'clear$',
+smd({
+        pattern: 'clear',
         fromMe: true,
         desc: 'delete whatsapp chat',
         type: 'whatsapp'
@@ -82,8 +82,8 @@ Function({
         await message.send('_Cleared_')
 })
 
-Function({
-        pattern: 'archive$',
+smd({
+        pattern: 'archive',
         fromMe: true,
         desc: 'archive whatsapp chat',
         type: 'whatsapp'
@@ -92,8 +92,8 @@ Function({
         await message.send('_Archived_')
 })
 
-Function({
-        pattern: 'unarchive$',
+smd({
+        pattern: 'unarchive',
         fromMe: true,
         desc: 'unarchive whatsapp chat',
         type: 'whatsapp'
@@ -102,8 +102,8 @@ Function({
         await message.send('_Unarchived_')
 })
 
-Function({
-        pattern: 'pin$',
+smd({
+        pattern: 'pin',
         fromMe: true,
         desc: 'pin a msg',
         type: 'whatsapp'
@@ -112,8 +112,8 @@ Function({
         await message.send('_Pined_')
 })
 
-Function({
-        pattern: 'unpin$',
+smd({
+        pattern: 'unpin',
         fromMe: true,
         desc: 'unpin a msg',
         type: 'whatsapp'
@@ -122,8 +122,8 @@ Function({
         await message.send('_Unpined_')
 })
 
-Function({
-        pattern: 'setbio ?(.*)',
+smd({
+        pattern: 'setbio',
         fromMe: true,
         desc: 'To change your profile status',
         type: 'whatsapp'
@@ -134,8 +134,8 @@ Function({
         await message.send('_Profile status updated_')
 })
 
-Function({
-        pattern: 'setname ?(.*)',
+smd({
+        pattern: 'setname',
         fromMe: true,
         desc: 'To change your profile name',
         type: 'whatsapp'
@@ -146,8 +146,8 @@ Function({
         await message.send('_Profile name updated_')
 })
 
-Function({
-        pattern: 'onwa ?(.*)',
+smd({
+        pattern: 'onwa',
         fromMe: true,
         desc: 'To check if a given ID is on WhatsApp',
         type: 'whatsapp'
